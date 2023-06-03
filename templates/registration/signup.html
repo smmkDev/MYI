@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% load static %}
+
+{% block title %}
+  Create a new account
+{% endblock %}
+
+<html>
+    <body>
+        {% block content %}
+            <section class="signup d-flex align-items-center h-100">
+              <div class="container-fluid d-flex justify-content-center w-100">
+                  <div class="form-holder col-lg-3">
+                      <form class="form-control p-2 w-100" method="post">{% csrf_token %}
+                          <div class="text-center my-2">
+                            <h3>Signup Here</h3>
+                          </div>
+                          <hr class="mt-0 mb-4" style="width:100%">
+                          <div class="py-2 mt-4">
+                              {{form.username}}
+                          </div>
+                          <div class="py-2">
+                              {{form.email}}
+                          </div>
+                          <div class="py-2">
+                              {{form.password1}}
+                          </div>
+                          <div class="py-2">
+                            {{form.password2}}
+                          </div>
+                          <div class="py-2">
+                              {{form.choice}}
+                          </div>
+                          <div class="my-2">
+                              <button class="btn" type="submit" value="save">Sign Up</button>
+                          </div>
+                          <div class="my-2">
+                            <a class="btn align-items-center justify-content-center" href="{% provider_login_url 'google' %}" id="google-auth">
+                                <img class="social-icons" src="{% static 'pictures/ic_google.png' %}">
+                                Google Signup
+                            </a> 
+                          </div>
+                          <div class="my-2">
+                            <a class="btn align-items-center justify-content-center" href="{% provider_login_url 'github' %}" id="git-auth">
+                                <img class="social-icons" src="{% static 'pictures/ic_github.png' %}">
+                                Github Signup
+                            </a>  
+                          </div>
+                      </form>
+                  </div>
+              </div>
+            </section>
+        {% endblock %}
+    </body>
+</html>

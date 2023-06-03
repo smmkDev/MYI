@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+    <body>
+        {% block content %}
+            <section class="nav-bar fixed-top" style="background-color: #09214f">
+                <div class="container-fluid d-flex align-items-center align-items-center w-100">
+                    <h3 class="text-light fw-bold py-4 mx-2 mt-2">MYI</h3>
+                    <ul class="nav-navbar d-flex mx-3 py-4">
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/">Home</a></li>
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/group/list">Groups</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/logout">Logout</a></li>
+                        {% else %}
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/user/login">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </section>
+            <section class="gr-dt">
+                <div class="main d-flex justify-content-center">
+                    <div class="timeline text-center w-100">
+                        <div class="container-fluid d-flex justify-content-center mt-5">
+                          <table class="user-table w-100">
+                            <th><h3 class="text-center py-2">Groups</h3></th>
+                            {% for group in object_list %}
+                              <tr class="user-row">
+                                <td class="user-data d-flex align-items-center">
+                                    <img class="profile-img mx-5" src="{{group.image}}">
+                                    <p class="px-5 py-2">{{group.name.upper}}</p>
+                                </td>
+                                <td class="user-data">
+                                    <a href="/join/{{group.pk}}"><button class="btn mx-5">Join</button></a>
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </table>
+                        </div> 
+                    </div>
+                </div>
+            </section>     
+        {% endblock %}    
+    </body>
+</html>

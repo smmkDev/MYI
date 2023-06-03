@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+    <body>
+        {% block content %}
+            <section class="nav-bar fixed-top" style="background-color: #09214f">
+                <div class="container-fluid d-flex align-items-center align-items-center w-100">
+                    <h3 class="text-light fw-bold py-4 mx-2 mt-2">MYI</h3>
+                    <ul class="nav-navbar d-flex mx-3 py-4">
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/">Home</a></li>
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/group/list">Groups</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/logout">Logout</a></li>
+                        {% else %}
+                        <li class="fw-bold py-2 mx-3"><a class="text-light" href="/user/login">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </section>
+            <section class="home">
+                <div class="intro">
+                    <div class="container d-flex justify-content-center align-items-center">
+                        <div class="intro-text">
+                            <h3 class="text-light fw-bold py-2">Welcome to MYI</h3>
+                            <p class="text-light fw-bold py-2">
+                                Welcome to MYI, the ultimate online platform that bridges the gap between students and professionals, enabling seamless collaboration and knowledge exchange. We understand the importance of practical experience and mentorship in shaping successful careers, which is why we have created a unique space where students can connect with professionals across various industries.<br>
+                                
+                                At MYI, we believe that learning extends beyond the classroom, and students can greatly benefit from the expertise and guidance of professionals who have excelled in their respective fields. Our platform serves as a virtual meeting ground, empowering students to reach out to professionals and engage in meaningful collaborations.<br>
+                                
+                                Whether you are a high school student exploring different career paths or a university student seeking guidance for your research project, MYI offers a vast network of professionals ready to share their knowledge and insights. From industry veterans and entrepreneurs to scientists and artists, our community comprises experts from diverse backgrounds, ensuring a rich and diverse learning experience for every student.<br>
+                                
+                                The MYI platform provides a range of features designed to facilitate seamless collaboration. Students can create profiles highlighting their areas of interest and expertise, enabling professionals to identify potential matches based on their specific needs. Our advanced search filters allow students to find professionals based on industry, location, experience level, and more, ensuring a personalized and tailored experience.<br>
+                                
+                                Once connected, students and professionals can engage in various collaboration formats, including one-on-one mentorship, group projects, informational interviews, and even job shadowing opportunities. Our messaging and video conferencing tools provide a secure and convenient environment for communication, fostering productive discussions and knowledge sharing.<br>
+                                
+                                In addition to connecting with professionals.</p>
+                        </div>
+                    </div>
+                    <div class="container d-flex align-items-center justify-content-center py-5">
+                        <div class="features">
+                            <h3 class="text-light text-center fw-bold py-2">Services We Provide</h3>
+                            <div class="col-lg-8 py-3">
+                                <h3 class="text-light fw-bold py-2">Counseling Services</h3>
+                                <p class="text-light py-2">
+                                   At MYI, we understand that the journey of personal and professional development can be filled with challenges and uncertainties.<br>
+                                   That's why we offer comprehensive counseling services to support students in their growth and decision-making processes. Our team of experienced counselors provides a safe and confidential space for students to express their concerns, explore their aspirations, and receive guidance tailored to their unique needs.
+                                </p>
+                            </div>
+                            <div class="col-lg-8 py-3">
+                                <h3 class="text-light fw-bold py-2">Resource Library</h3>
+                                <p class="text-light py-2">
+                                    Maintain a comprehensive resource library with educational content, articles, webinars, and success stories from professionals.<br>This serves as a knowledge hub for students to access relevant information and stay updated on industry trends.
+                                </p>
+                            </div>
+                            <div class="col-lg-8 py-3">
+                                <h3 class="text-light fw-bold py-2">Project Collaboration</h3>
+                                <p class="text-light py-2">
+                                    Enable students and professionals to collaborate on projects, whether academic or industry-related.<br>This feature allows for hands-on learning experiences and fosters practical skills development.
+                                </p>
+                            </div>
+                            <div class="col-lg-8 py-3">
+                                <h3 class="text-light fw-bold py-2">Messaging and Communication</h3>
+                                <p class="text-light py-2">
+                                    Offer secure messaging and video conferencing capabilities within the platform to facilitate seamless communication between students and professionals. This allows for real-time collaboration, mentorship, and knowledge exchange.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-center align-items-center">
+                    <div class="join">
+                       <h3 class="text-light text-center fw-bold py-2">Start Your Journey</h3>
+                       <div class="btn-container d-flex justify-content-center py-2">
+                          <a class="mx-5" href="/user/signup"><button class="btn">Join Now</button></a>
+                          <a class="mx-5" href="/user/login"><button class="btn">Login</button></a>
+                       </div>
+                    </div>
+                </div>
+                 <div class="copyright_section mt-4 py-3">
+                    <div class="container">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-sm-12">
+                                <!-- <h3 class="text-light fw-bold mt-5 mx-2">MYI</h3> -->
+                                <p class="text-light text-center">All Rights Reserved © XWEN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+        <!-- <div class="client_section layout_padding">
+            <div class="container">
+                <h1 class="about_text">what is say clients</h1>
+                <p class="ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq</p>
+                <div class="client_section_2 layout_padding">
+                    <h1 class="client_text">Consectetur adipiscing </h1>
+                    <p class="ipsum_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+                    <div class="icon_4"><img src="images/icon-4.png"></div>
+                </div>
+            </div>
+        </div> -->
+        <!--client section end -->
+        <!--footer section start -->
+        <!-- <div class="footer_section layout_padding">
+            <div class="container">
+                <div class="footer_main">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter your email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2">subscribe Now</span>
+                        </div>
+                    </div>
+                    <h1 class="year_text">2020</h1>
+                    <h1 class="landing_text">Free Multipurpose Responsive  Landing Page </h1>
+                </div>
+                <div class="social_icon">
+                    <ul>
+                        <li><a href="#"><img src="images/fb-icon.png"></a></li>
+                        <li><a href="#"><img src="images/twitter-icon.png"></a></li>
+                        <li><a href="#"><img src="images/linkdin-icon.png"></a></li>
+                        <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+                        <li><a href="#"><img src="images/youtub-icon.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+        <!--footer section end -->
+        <!--copyright section start -->
+        <!-- <div class="copyright_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="copyright_text">2020 All Rights Reserved Design by <a href="https://html.design/"> Free Html Templates</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!--copyright section end -->
+         <!-- Javascript files-->
+        {% endblock %}
+    </body>
+</html>

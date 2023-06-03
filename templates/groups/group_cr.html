@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+    <body>
+        {% block content %}
+          <section class="group-cr w-100 h-100">
+            <div class="container-fluid d-flex align-items-center">
+              <form class="user-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row d-flex justify-content-center w-100">
+                  <div class="col-lg-6 my-3 py-2">
+                      <h5 class="py-2">Main Image:</h5>
+                      {{form.image}}
+                  </div>
+                  <div class="col-lg-6 my-3 py-2">
+                      <h5 class="py-2">Banner Image:</h5>
+                      {{form.banner}}
+                  </div>
+                </div>
+                <div class="my-3 py-2">
+                  {{form.name}}
+                </div>
+                <div class="my-3 py-2">
+                  {{form.field}}
+                </div>
+                <div class="my-3 py-2">
+                  {{form.des}}
+                </div>
+                <div class="my-3 py-2">
+                  <button class="btn" type="submit" value="save">Submit</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        {% endblock %}
+    </body>
+</html>
